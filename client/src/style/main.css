@@ -1,0 +1,87 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit';
+  background-color: #0b0b0f;
+  color: white;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* ===== Custom Orange Scrollbar ===== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0b0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff6a00;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff8533;
+}
+
+/* Firefox */
+html {
+  scrollbar-color: #ff6a00 #0b0b0f;
+  scrollbar-width: thin;
+}
+
+/* ===== Grid Background ===== */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(255,106,0,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,106,0,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+/* ===== Section Titles ===== */
+.section {
+  padding: 120px 60px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 50px;
+}
+
+.section h2 span {
+  color: #ff6a00;
+}
+
+
+@media (max-width: 768px) {
+
+  
+
+  .section h2 {
+    font-size: 32px;
+  }
+
+}
+
+

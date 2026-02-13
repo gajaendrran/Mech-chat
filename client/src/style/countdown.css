@@ -1,0 +1,35 @@
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background: #0f0f14;
+  padding: 30px 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  transition: 0.3s;
+  width: 150px;
+}
+
+.time-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+
+.time-box h2 {
+  font-size: 35px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.time-box span {
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+    color: #ff6a00;
+}

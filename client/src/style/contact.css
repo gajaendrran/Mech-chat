@@ -1,0 +1,24 @@
+/* ===== Contact ===== */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 60px;
+  text-align: left;
+}
+
+.contact-box {
+  background: #111;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,106,0,0.2);
+}
+
+.footer {
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid rgba(255,106,0,0.2);
+  margin-top: 100px;
+  opacity: 0.6;
+  height: 20px;
+}

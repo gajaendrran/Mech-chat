@@ -1,0 +1,158 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: #0b0b0f;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ================= GRID BACKGROUND ================= */
+
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none; /* IMPORTANT */
+
+  background-image:
+    linear-gradient(rgba(255, 106, 0, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 106, 0, 0.07) 1px, transparent 1px);
+
+  background-size: 60px 60px;
+}
+
+/* ORANGE GLOW EFFECT */
+
+.grid-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 106, 0, 0.35) 0%,
+    rgba(255, 106, 0, 0.2) 30%,
+    rgba(255, 106, 0, 0.1) 50%,
+    transparent 70%
+  );
+
+  animation: pulseGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* ================= HERO CONTENT ================= */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  padding: 0 20px;
+}
+
+.hero h4 {
+  font-size: 16px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  color: #ff6a00;
+}
+
+.hero h1 {
+  font-size: 90px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #ff6a00;
+}
+
+.hero p {
+  opacity: 0.8;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-group {
+  margin-top: 40px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 40px;
+  margin: 0 15px;
+  border-radius: 8px;
+  border: 1px solid #ff6a00;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Primary Button */
+
+.btn-primary {
+  background: #ff6a00;
+  color: black;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 20px #ff6a00;
+}
+
+/* Outline Button */
+
+.btn-outline {
+  background: transparent;
+  color: #ff6a00;
+}
+
+.btn-outline:hover {
+  background: #ff6a00;
+  color: black;
+  box-shadow: 0 0 20px #ff6a00;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 42px;
+  }
+  .hero-content{
+    margin-top: 150px;
+  }
+  .hero h4 {
+    font-size: 14px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    margin: 0;
+  }
+}
