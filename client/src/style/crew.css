@@ -1,0 +1,431 @@
+/* Import Poppins font to match MECHCHAT'26 theme */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #ff6a00;
+  --dark-bg: #0c0c0c;
+  --card-bg: rgba(15, 15, 15, 0.85);
+  --glow-color: rgba(255, 106, 0, 0.7);
+  --shadow-color: rgba(0, 0, 0, 0.8);
+  --transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.crew-page {
+  min-height: 100vh;
+  padding: 100px 20px;
+  background: var(--dark-bg);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.crew-page.visible {
+  opacity: 1;
+}
+
+/* Grid background matching MECHCHAT'26 */
+.grid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 106, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 106, 0, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Decorative elements matching theme */
+.decorative-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.crew-line {
+  position: absolute;
+  background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+  height: 2px;
+}
+
+.line-1 {
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  transform: rotate(15deg);
+}
+
+.line-2 {
+  bottom: 30%;
+  right: 15%;
+  width: 70%;
+  transform: rotate(-10deg);
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--primary-color);
+  opacity: 0.3;
+}
+
+.circle-1 {
+  width: 300px;
+  height: 300px;
+  top: 15%;
+  left: 5%;
+}
+
+.circle-2 {
+  width: 250px;
+  height: 250px;
+  bottom: 20%;
+  right: 10%;
+}
+
+/* Content container for centering */
+.content-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  margin-top: 30px;
+}
+
+/* TITLE */
+.crew-title {
+  /* font-size: 3.5rem; */
+  font-size: 48px;
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+  text-align: center;
+  position: relative;
+  line-height: 1.1;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out 0.3s forwards;
+  color: white;
+  text-shadow: 0 0 20px rgba(255, 106, 0, 0.5);
+  /* font-weight: 700; */
+}
+.crew-title span {
+  color: #ff6a00;
+}
+
+.crew-page.visible .crew-title {
+  animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+/* SECTION */
+.crew-section {
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.crew-page.visible .crew-section {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.crew-page.visible .crew-section:first-child {
+  animation-delay: 0.5s;
+}
+
+.crew-page.visible .crew-section:last-child {
+  animation-delay: 0.7s;
+}
+
+.crew-section-heading {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(255, 106, 0, 0.3);
+}
+
+.crew-section-heading::before,
+.crew-section-heading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+}
+
+.crew-section-heading::before {
+  left: -70px;
+}
+
+.crew-section-heading::after {
+  right: -70px;
+}
+
+/* ROWS */
+.crew-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* STUDENT GRID */
+.student-row {
+  margin-top: 30px;
+}
+
+/* MEMBER */
+.crew-member {
+  text-align: center;
+  position: relative;
+  perspective: 1000px;
+  min-width: 220px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: var(--transition);
+}
+
+.animated.fade-in {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Profile container for 3D effect */
+.profile-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+/* PROFILE IMAGE - 3D EFFECT */
+.profile-img {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: visible; /* Changed from hidden to visible */
+  position: relative;
+  border: 4px solid transparent;
+  background: linear-gradient(45deg, var(--primary-color), #e05a00) border-box;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.7),
+    0 0 25px rgba(255, 106, 0, 0.4);
+  transform-style: preserve-3d;
+  transition: var(--transition);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.staff .profile-img {
+  width: 210px;
+  height: 210px;
+  border-width: 5px;
+}
+
+.profile-img img {
+  width: 115%; /* Slightly larger than container */
+  height: 115%;
+  object-fit: cover;
+  display: block;
+  transform: translateZ(30px) translateY(-8%); /* Push image up by 8% */
+  transition: var(--transition);
+  border-radius: 50%;
+}
+
+/* 3D HOVER EFFECT */
+.crew-member:hover .profile-img {
+  transform: scale(1.12) rotateY(15deg) rotateX(8deg) translateZ(0);
+  box-shadow: 
+    0 15px 50px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(255, 106, 0, 0.8),
+    0 0 60px rgba(255, 106, 0, 0.5);
+}
+
+.crew-member:hover .profile-img img {
+  transform: translateZ(60px) scale(1.05) translateY(-8%); /* Maintain position on hover */
+  filter: brightness(1.1);
+}
+
+/* Glow effect */
+.profile-glow {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: var(--transition);
+}
+.crew-member:hover .profile-glow {
+  opacity: 0.8;
+  transform: scale(1.2);
+}   
+.profile-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 4px solid var(--primary-color);
+  border-radius: 50%;
+  z-index: 1;
+  transition: var(--transition);
+}
+.staff .profile-border {
+  border-width: 5px;
+}
+/* Member info styling */
+.member-info {
+  padding: 15px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.crew-member:hover .member-info {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 35px var(--shadow-color),
+    0 0 20px rgba(255, 106, 0, 0.3);
+  background: rgba(25, 20, 25, 0.92);
+}
+
+.member-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.member-info p {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .crew-title {
+    font-size: 40px;
+  }
+  
+  .crew-section-heading {
+    font-size: 1.9rem;
+  }
+  
+  .staff .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .profile-img {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+@media (max-width: 768px) {
+  .crew-page {
+    padding: 80px 15px;
+  }
+  
+  .crew-title {
+    font-size: 35px;
+    margin-bottom: 70px;
+  }
+  
+  .crew-section-heading {
+    font-size: 1.7rem;
+    margin-bottom: 50px;
+  }
+  
+  .staff .profile-img {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .crew-row {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .crew-title {
+    font-size: 28px;
+  }
+  
+  .crew-section-heading {
+    font-size: 1.5rem;
+  }
+  
+  .staff .profile-img {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .profile-img {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .crew-row {
+    gap: 25px;
+  }
+  
+  .member-info h3 {
+    font-size: 1.35rem;
+  }
+  
+  .member-info p {
+    font-size: 1rem;
+  }
+}
