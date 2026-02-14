@@ -14,10 +14,12 @@ import {
   FaLaughSquint
 } from "react-icons/fa";
 import "../style/event.css";
+import '../style/confirmDialogue.css';
 
 export default function EventsSection() {
   const [activeTech, setActiveTech] = useState(null);
   const [activeNonTech, setActiveNonTech] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const techEvents = [
     {
@@ -101,7 +103,6 @@ export default function EventsSection() {
 
   const renderCard = (event, index, active, toggleFn) => {
     const Icon = event.icon;
-
     return (
       <div
         key={index}
@@ -114,20 +115,29 @@ export default function EventsSection() {
               <Icon />
             </div>
           </div>
-          <FaChevronDown
-            className={`arrow ${active === index ? "rotate" : ""}`}
-          />
+          <FaChevronDown className={`arrow ${active === index ? "rotate" : ""}`} />
         </div>
         <h4>{event.title}</h4>
         <p className="short-text">{event.short}</p>
-
         <div className={`expand-content ${active === index ? "show" : ""}`}>
-          <hr></hr>
+          <hr />
           <p>{event.full}</p>
         </div>
       </div>
     );
   };
+
+  const handleRegisterClick = () => {
+    setShowModal(true); // open modal
+  };
+
+  const handleConfirm = () => {
+    // Navigate to Google Form on confirm
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLScSUa5K1TCu3-GieMW2McYwZP1rLcObHKgm0Xy81uZ9PdCbqQ/viewform?usp=publish-editor", "_blank");
+    setShowModal(false);
+  };
+
+  const handleCancel = () => setShowModal(false);
 
   return (
     <section className="events" id="events">
@@ -151,9 +161,31 @@ export default function EventsSection() {
           renderCard(event, index, activeNonTech, toggleNonTech)
         )}
       </div>
-      <div  id="btn">
-        <a href="#" className="btn btn-outline">REGISTER</a>
+
+      <div id="btn">
+        <button className="btn btn-outline" onClick={handleRegisterClick}>
+          REGISTER
+        </button>
       </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h3>Rules & Regulations</h3>
+            <ul>
+              <li>All participants must carry their valid College ID Card for entry and verification purposes.</li>
+              <li>Participants are advised to keep their payment Transaction ID safely for registration confirmation and future reference.</li>
+              <li>Workshop participants will be provided with complimentary accommodation and lunch as part of the symposium hospitality.</li>
+              <li>Enjoy a comfortable stay and lunch arrangements during your workshop participation at MEKCHAT 26.0.</li>
+            </ul>
+            <div className="modal-buttons">
+              <button className="btn btn-outline" onClick={handleCancel}>Cancel</button>
+              <button className="btn btn-primary" onClick={handleConfirm}>Confirm & Proceed</button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

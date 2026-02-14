@@ -1,24 +1,145 @@
-/* ===== Contact ===== */
+/* ===== Contact Section ===== */
 .contact-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-top: 60px;
+  gap: 40px;
+  margin-top: 40px;
   text-align: left;
 }
 
-.contact-box {
-  background: #111;
-  padding: 30px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,106,0,0.2);
+/* ===== First Row: Student Coordinators ===== */
+.first-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 40px;
+  align-items: stretch; /* ensures all boxes have equal height */
 }
 
+/* ===== Second Row: Venue & Instagram ===== */
+.second-row {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;        /* boxes same height */
+  justify-content: center;     /* center horizontally */
+  flex-wrap: wrap;             /* wrap on small screens */
+}
+
+/* ===== Contact Box Styling ===== */
+.contact-box {
+  background: #111;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,106,0,0.2);
+  text-align: center;
+  height: 100%;               /* fill parent grid/flex height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.contact-box h3 {
+  margin-bottom: 10px;
+  color: #ff6a00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* space between text and icon */
+}
+
+.contact-box p {
+  margin: 5px 0;
+}
+
+.contact-box a {
+  color: #ff6a00;
+  text-decoration: none;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Footer ===== */
 .footer {
   padding: 10px;
   text-align: center;
   border-top: 1px solid rgba(255,106,0,0.2);
-  margin-top: 100px;
+  margin-top: 60px;
+  bottom: 0px;
+  opacity: 0.7;
+}
+
+/* ===== Clickable Box Links ===== */
+.contact-link {
+  text-decoration: none; /* remove underline */
+  color: inherit;        /* inherit text color */
+  display: block;        /* so entire box is clickable */
+}
+
+.contact-link:hover .contact-box {
+  transform: scale(1.03);
+  cursor: pointer;
+  border: 1px solid #ff6a00;
+}
+.contact-link:hover .contact-box::after{
   opacity: 0.6;
-  height: 20px;
+}
+.contact-link:hover .contact-icon{
+  opacity: 0.9;
+}
+
+/* ===== Icons inside contact boxes ===== */
+.contact-icon {
+  font-size: 20px;
+  color: #ff6a00;
+  opacity: 0.6;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 1024px) {
+  .first-row {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+
+  .second-row {
+    flex-direction: column; /* stack vertically on smaller screens */
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .first-row {
+    grid-template-columns: 1fr; /* single column on mobile */
+  }
+  .contact-box {
+    width: 100%;
+  }
+}
+
+
+.contact-box {
+  position: relative; /* for pseudo-element positioning */
+  background: #111;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,106,0,0.2);
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden; /* ensures the arc doesn't overflow */
+}
+
+/* Bottom-left decorative arc */
+.contact-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;       /* horizontal size of the arc */
+  height: 50px;      /* vertical size of the arc */
+  background: #ff6a00;
+  border-radius: 0 100% 0 0; /* quarter-circle shape */
+  opacity: 0.2;      /* subtle effect */
+  z-index: 0;        /* behind content */
 }

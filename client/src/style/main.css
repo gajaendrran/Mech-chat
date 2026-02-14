@@ -61,7 +61,7 @@ html {
 
 /* ===== Section Titles ===== */
 .section {
-  padding: 120px 60px;
+  padding: 120px 60px 10px;
   text-align: center;
 }
 
@@ -82,6 +82,9 @@ html {
   .section h2 {
     font-size: 32px;
   } 
+  .section{
+    padding:  20px 10px;
+  }
 }
 
 
