@@ -75,13 +75,13 @@ html {
 
 
 @media (max-width: 768px) {
-
-  
-
+  body{
+    display: flex;
+    align-items: center;
+  }
   .section h2 {
     font-size: 32px;
-  }
-
+  } 
 }
 
 

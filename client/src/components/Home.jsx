@@ -11,13 +11,13 @@ export default function Hero() {
         <h1>
           MECH<span>CHAT'26</span>
         </h1>
-        <p>Department of Mechanical Engineering</p>
-        <p>Ignite Your Passion for Innovation & Technology</p>
+        <p><b>Department of Mechanical Engineering</b></p>
+        <p>Machines take me by surprise by great frequency</p>
 
         <div className="btn-group">
           <a href="#events" className="btn btn-primary">EXPLORE EVENTS</a>
           <a href="#about" className="btn btn-outline">LEARN MORE</a>
-          <a href="#" className="btn btn-outline">REGISTER</a>
+          <a href="#workshop" className="btn btn-outline">WORKSHOP</a>
         </div>
         <Countdown/>
       </div>
