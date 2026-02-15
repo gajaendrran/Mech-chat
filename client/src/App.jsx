@@ -8,7 +8,7 @@ import About from "./components/About";
 import Events from "./components/Event";
 import Contact from "./components/Contact";
 import Crew from "./components/Crew";
-import Workshop from "./components/workshop";
+import Workshop from "./components/Workshop";
 
 function HomePage() {
   return (
