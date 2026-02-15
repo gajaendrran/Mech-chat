@@ -9,13 +9,13 @@ export default function About() {
         <h5 className="about-subtitle">WHO WE ARE</h5>
 
         <h2 className="about-title">
-          About <span>MechChat'26</span>
+          About <span>MekChat'26</span>
         </h2>
 
         <p className="about-description">
-         MechChat'26 is a National Level Technical Symposium organized by the Department of Mechanical Engineering. 
+         MekChat'26 is a National Level Technical Symposium organized by the Department of Mechanical Engineering. 
          This prestigious event brings together students from diverse institutions nationwide to compete, collaborate, and celebrate innovation. 
-         From intense technical challenges to creative non-technical events, MechChat offers something for every aspiring engineer.
+         From intense technical challenges to creative non-technical events, MekChat offers something for every aspiring engineer.
         </p>
 
         <div className="about-cards">

@@ -28,7 +28,7 @@ export default function Navbar() {
     <div className="navbar">
       <div className="navbar-inner">
         <div className="logo">
-          MECHCHAT<span>'26</span>
+          MEKCHAT<span>'26</span>
         </div>
 
         <div className={`nav-links ${menuOpen ? "active" : ""}`}>
@@ -41,6 +41,10 @@ export default function Navbar() {
           <a href="#events" onClick={() => setMenuOpen(false)}>
             <span onClick={() => handleScroll("events")}>EVENTS</span>
           </a>
+          <Link to="/workshop" onClick={() => setMenuOpen(false)}>
+            WORKSHOP
+          </Link>
+
           <Link to="/crew" onClick={() => setMenuOpen(false)}>
             CREW
           </Link>

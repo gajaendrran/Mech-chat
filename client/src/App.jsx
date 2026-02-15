@@ -8,6 +8,7 @@ import About from "./components/About";
 import Events from "./components/Event";
 import Contact from "./components/Contact";
 import Crew from "./components/Crew";
+import Workshop from "./components/workshop";
 
 function HomePage() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/crew" element={<Crew />} />
+        <Route path="/workshop" element={<Workshop />} />
       </Routes>
     </Router>
   );
