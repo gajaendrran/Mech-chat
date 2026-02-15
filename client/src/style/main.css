@@ -164,6 +164,9 @@ html {
   position: absolute;
   top: 0;
   left: -10%;
+}.section {
+  padding: 10px 10px 10px;
+  text-align: center;
 }
 }
 

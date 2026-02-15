@@ -24,7 +24,7 @@ export default function EventsSection() {
 
   useEffect(() => {
     const sr = ScrollReveal({
-      distance: "60px",
+      distance: "20px",
       duration: 1200,
       easing: "ease-in-out",
       reset: false,

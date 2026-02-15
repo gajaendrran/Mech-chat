@@ -87,6 +87,7 @@
     padding: 10px 0;
   }
   .navbar {
+    width: 100%;
     padding: 20px;
   }
   .navbar-inner{
