@@ -58,7 +58,7 @@ export default function Contact() {
         >
           <div className="contact-box">
             <h3>Instagram <FaInstagram className="contact-icon" /></h3>
-            <p>@mechchat26</p>
+            <p>@mekchat_26.0</p>
           </div>
         </a>
       </div>
