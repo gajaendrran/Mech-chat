@@ -3,10 +3,11 @@ import { FaCalendarAlt, FaMapMarkerAlt, FaClock, FaChalkboardTeacher, FaIndustry
 import "../style/workshop.css";
 
 export default function Workshop() {
-
+  const [showModal, setShowModal] = useState(false);
   const workshopDetails = {
     title: "Integrated Mechanical Innovation: From Tribology to Smart Manufacturing",
     description: "This comprehensive workshop bridges fundamental mechanical principles with cutting-edge Industry 4.0 technologies. Participants will gain hands-on experience in tribology, failure analysis, and smart manufacturing systems. The curriculum is designed by industry experts to provide practical knowledge applicable to real-world engineering challenges. Attendees will leave with actionable insights to optimize mechanical systems, implement predictive maintenance strategies, and leverage IoT for manufacturing efficiency.",
+    highlights:" Open to ECE,EEE,MECH,PRODUCTION and AUTOMOBILE branches.\nThis workshop may help you gain a strong advantage in securing future placement opportunities!",
     tutor: {
       name: "K.Kumareshan",
       title: "CEO",
@@ -16,7 +17,7 @@ export default function Workshop() {
     venue: "Mechanical Engineering Department, Main Auditorium",
     date: "March 05, 2026",
     time: "10:00 AM ",
-    price: "₹200"
+    price: "₹300"
   };
 
   const subtopics = [
@@ -32,18 +33,28 @@ export default function Workshop() {
     { id: 10, title: "Energy-Efficient Machine Design", icon: <FaIndustry /> }
   ];
 
+  const handleRegisterClick = () => {
+    setShowModal(true); // open modal
+  };
 
+  const handleConfirm = () => {
+    // Navigate to Google Form on confirm
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLScSUa5K1TCu3-GieMW2McYwZP1rLcObHKgm0Xy81uZ9PdCbqQ/viewform?usp=publish-editor", "_blank");
+    setShowModal(false);
+  };
+
+  const handleCancel = () => setShowModal(false);
 
   return (
     <section id="workshop" className="workshop-page">
       {/* Grid background */}
       <div className="grid-background"></div>
-      
+
       <div className="workshop-container">
         <div className="workshop-header">
-            <h2 className="events-title">
-          Work <span>Shop</span>
-        </h2>
+          <h2 className="events-title">
+            Work <span>Shop</span>
+          </h2>
           <h1 className="workshop-title">{workshopDetails.title}</h1>
           <div className="workshop-meta">
             <div className="meta-item">
@@ -67,7 +78,9 @@ export default function Workshop() {
             <p className="description-text">
               {workshopDetails.description}
             </p>
-            
+            <p className="placement-highlight">
+               {workshopDetails.highlights}
+            </p>
             <div className="tutor-section">
               <h3 className="tutor-title">Workshop Instructor</h3>
               <div className="tutor-card">
@@ -101,9 +114,27 @@ export default function Workshop() {
               <span className="price-label">Workshop Fee:</span>
               <span className="price-amount">{workshopDetails.price}</span>
             </div>
-            
-            <button className="register-now-btn">Register Now</button>
+
+            <button className="register-now-btn" onClick={handleRegisterClick}>Register Now</button>
           </div>
+          {/* Modal */}
+          {showModal && (
+            <div className="modal-overlay">
+              <div className="modal">
+                <h3>Rules & Regulations</h3>
+                <ul>
+                  <li>All participants must carry their valid College ID Card for entry and verification purposes.</li>
+                  <li>Participants are advised to keep their payment Transaction ID safely for registration confirmation and future reference.</li>
+                  <li>Workshop participants will be provided with complimentary accommodation and lunch as part of the symposium hospitality.</li>
+                  <li>Enjoy a comfortable stay and lunch arrangements during your workshop participation at MEKCHAT 26.0.</li>
+                </ul>
+                <div className="modal-buttons">
+                  <button className="btn btn-outline" onClick={handleCancel}>Cancel</button>
+                  <button className="btn btn-primary" onClick={handleConfirm}>Confirm & Proceed</button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

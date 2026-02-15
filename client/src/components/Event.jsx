@@ -133,7 +133,7 @@ export default function EventsSection() {
 
   const handleConfirm = () => {
     // Navigate to Google Form on confirm
-    window.open("https://docs.google.com/forms/d/e/1FAIpQLScSUa5K1TCu3-GieMW2McYwZP1rLcObHKgm0Xy81uZ9PdCbqQ/viewform?usp=publish-editor", "_blank");
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSfgXSKkNIrGmA8uT2EDV5QnQv-7q32DiY8OphkxMlhl_21R-g/viewform?usp=publish-editor", "_blank");
     setShowModal(false);
   };
 
@@ -176,8 +176,6 @@ export default function EventsSection() {
             <ul>
               <li>All participants must carry their valid College ID Card for entry and verification purposes.</li>
               <li>Participants are advised to keep their payment Transaction ID safely for registration confirmation and future reference.</li>
-              <li>Workshop participants will be provided with complimentary accommodation and lunch as part of the symposium hospitality.</li>
-              <li>Enjoy a comfortable stay and lunch arrangements during your workshop participation at MEKCHAT 26.0.</li>
             </ul>
             <div className="modal-buttons">
               <button className="btn btn-outline" onClick={handleCancel}>Cancel</button>

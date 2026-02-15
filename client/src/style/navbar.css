@@ -89,4 +89,7 @@
   .navbar {
     padding: 20px;
   }
+  .navbar-inner{
+    padding: 5px;
+  }
 }

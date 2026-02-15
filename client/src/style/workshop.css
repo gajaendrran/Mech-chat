@@ -126,6 +126,17 @@
   grid-template-columns: 1fr;
   gap: 50px;
 }
+.placement-highlight {
+  margin-top: 20px;
+  font-size: 17px;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  white-space: pre-wrap;
+}
 
 .section-title {
   font-size: 32px;

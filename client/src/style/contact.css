@@ -110,7 +110,7 @@
 
 @media (max-width: 600px) {
   #contact{
-    padding-top: 15vh;
+    padding-top: 13vh;
   }
   .first-row {
     grid-template-columns: 1fr; /* single column on mobile */
