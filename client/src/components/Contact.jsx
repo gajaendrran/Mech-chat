@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
+import ScrollReveal from "scrollreveal";
 import '../style/contact.css';
 import { FaUserTie, FaMapMarkerAlt, FaInstagram } from "react-icons/fa";
 
 export default function Contact() {
+
+  useEffect(() => {
+    const sr = ScrollReveal({
+      distance: "0px",   // pure fade
+      duration: 1000,
+      easing: "ease-in-out",
+      reset: false
+    });
+
+    sr.reveal("#contact h2", { delay: 200 });
+    sr.reveal(".first-row", { delay: 300 });
+    sr.reveal(".second-row", { delay: 400 });
+    // sr.reveal(".footer", { delay: 500 });
+
+  }, []);
+
   return (
     <section id="contact" className="section">
       <h2>Contact <span>Us</span></h2>
 
-      {/* First Row: Student Coordinators */}
+      {/* First Row */}
       <div className="contact-container first-row">
         <a href="tel:+919342596841" className="contact-link">
           <div className="contact-box">
@@ -34,7 +51,7 @@ export default function Contact() {
         </a>
 
         <a
-          href="https://www.instagram.com/mekchat_26.0?igsh=MWxxcG1qdHVlNDFkdA=="
+          href="https://www.instagram.com/mekchat_26.0"
           target="_blank"
           rel="noreferrer"
           className="contact-link"
@@ -46,10 +63,10 @@ export default function Contact() {
         </a>
       </div>
 
-      {/* Second Row: Venue & Instagram */}
+      {/* Second Row */}
       <div className="contact-container second-row">
         <a
-          href="https://maps.app.goo.gl/ACUQRpWnshUSZRv17?g_st=aw"
+          href="https://maps.app.goo.gl/ACUQRpWnshUSZRv17"
           target="_blank"
           rel="noreferrer"
           className="contact-link"
@@ -61,6 +78,7 @@ export default function Contact() {
           </div>
         </a>
       </div>
+
       <div className="footer">
         © 2026 Department of Mechanical Engineering. All rights reserved.
       </div>

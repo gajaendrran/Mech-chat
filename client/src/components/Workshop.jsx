@@ -14,8 +14,8 @@ export default function Workshop() {
       company: "CMD Engineering Solutions",
       bio: "With over 15 years of industry experience, Kumaresh has led transformative projects across automotive and heavy machinery sectors. He specializes in predictive maintenance systems and smart factory implementations, having deployed solutions in 50+ manufacturing facilities across Asia. His research on tribology applications has been published in multiple international journals."
     },
-    venue: "Mechanical Engineering Department, Main Auditorium",
-    date: "March 05, 2026",
+    venue: "Mechanical Department, Seminar hall",
+    date: "March 06, 2026",
     time: "10:00 AM ",
     price: "₹300"
   };
