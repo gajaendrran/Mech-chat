@@ -9,32 +9,32 @@ export default function Contact() {
 
       {/* First Row: Student Coordinators */}
       <div className="contact-container first-row">
-        <a href="tel:+919876543210" className="contact-link">
+        <a href="tel:+919342596841" className="contact-link">
           <div className="contact-box">
             <h3>Manoj M</h3>
             <p>Secretary <FaUserTie className="contact-icon" /></p>
-            <p>+91 98765 43210</p>
+            <p>+91 93425 96841</p>
           </div>
         </a>
 
-        <a href="tel:+919876543211" className="contact-link">
+        <a href="tel:+918300488027" className="contact-link">
           <div className="contact-box">
             <h3>Suryakanth SK</h3>
             <p>Workshop Incharge <FaUserTie className="contact-icon" /></p>
-            <p>+91 98765 43211</p>
+            <p>+91 83004 88027</p>
           </div>
         </a>
 
-        <a href="tel:+919876543212" className="contact-link">
+        <a href="tel:+919585657065" className="contact-link">
           <div className="contact-box">
             <h3>Kabilan</h3>
             <p>Events Incharge <FaUserTie className="contact-icon" /></p>
-            <p>+91 98765 43212</p>
+            <p>+91 95856 57065</p>
           </div>
         </a>
 
         <a
-          href="https://instagram.com/mechchat26"
+          href="https://www.instagram.com/mekchat_26.0?igsh=MWxxcG1qdHVlNDFkdA=="
           target="_blank"
           rel="noreferrer"
           className="contact-link"
@@ -49,7 +49,7 @@ export default function Contact() {
       {/* Second Row: Venue & Instagram */}
       <div className="contact-container second-row">
         <a
-          href="https://www.google.com/maps/place/Government+College+Of+Engineering,+Salem"
+          href="https://maps.app.goo.gl/ACUQRpWnshUSZRv17?g_st=aw"
           target="_blank"
           rel="noreferrer"
           className="contact-link"

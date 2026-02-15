@@ -3,7 +3,7 @@ import "../style/countdown.css";
 
 export default function Countdown() {
   // 🔥 Set your event date here
-  const eventDate = new Date("March 12, 2026 09:00:00").getTime();
+  const eventDate = new Date("March 5, 2026 09:00:00").getTime();
 
   const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
 

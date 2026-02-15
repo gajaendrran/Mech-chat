@@ -93,7 +93,9 @@
   color: #ff6a00;
   opacity: 0.6;
 }
-
+#contact h2{
+  padding-bottom: 30px;
+}
 /* ===== Responsive Adjustments ===== */
 @media (max-width: 1024px) {
   .first-row {
@@ -107,11 +109,17 @@
 }
 
 @media (max-width: 600px) {
+  #contact{
+    padding-top: 15vh;
+  }
   .first-row {
     grid-template-columns: 1fr; /* single column on mobile */
   }
   .contact-box {
     width: 100%;
+  }
+  #contact h2{
+    padding-bottom: 0px;
   }
 }
 
