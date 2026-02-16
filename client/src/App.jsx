@@ -48,7 +48,7 @@ function App() {
 
     setTimeout(() => {
       if (videoRef.current) {
-        videoRef.current.currentTime = 1; // start from 1 second
+        videoRef.current.currentTime = 0.2; // start from 1 second
         videoRef.current.play(); // play with sound
       }
     }, 100);
