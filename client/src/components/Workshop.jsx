@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { FaCalendarAlt, FaMapMarkerAlt, FaClock, FaChalkboardTeacher, FaIndustry, FaCogs, FaRobot, FaTools } from 'react-icons/fa';
+import { useNavigate } from "react-router-dom";
 import "../style/workshop.css";
 
 export default function Workshop() {
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
   const workshopDetails = {
     title: "Integrated Mechanical Innovation: From Tribology to Smart Manufacturing",
     description: "This comprehensive workshop bridges fundamental mechanical principles with cutting-edge Industry 4.0 technologies. Participants will gain hands-on experience in tribology, failure analysis, and smart manufacturing systems. The curriculum is designed by industry experts to provide practical knowledge applicable to real-world engineering challenges. Attendees will leave with actionable insights to optimize mechanical systems, implement predictive maintenance strategies, and leverage IoT for manufacturing efficiency.",
-    highlights:" Open to ECE,EEE,MECH,PRODUCTION and AUTOMOBILE branches.\nThis workshop may help you gain a strong advantage in securing future placement opportunities!",
+    highlights: " Open to ECE,EEE,MECH,PRODUCTION and AUTOMOBILE branches.\nThis workshop may help you gain a strong advantage in securing future placement opportunities!",
     tutor: {
       name: "K.Kumareshan",
       title: "CEO",
@@ -79,7 +81,7 @@ export default function Workshop() {
               {workshopDetails.description}
             </p>
             <p className="placement-highlight">
-               {workshopDetails.highlights}
+              {workshopDetails.highlights}
             </p>
             <div className="tutor-section">
               <h3 className="tutor-title">Workshop Instructor</h3>
@@ -117,6 +119,65 @@ export default function Workshop() {
 
             <button className="register-now-btn" onClick={handleRegisterClick}>Register Now</button>
           </div>
+          {/* Accommodation Section */}
+          <div className="accommodation-section">
+            <h2 className="section-title">Accommodation Details – MEKCHAT Symposium</h2>
+
+            <div className="acc-card">
+              <h3>Combo Registration (Workshop + Events)</h3>
+              <ul>
+                <li>Access to both 2-Day Symposium Events</li>
+                <li>FREE Accommodation</li>
+                <li>2nd Day Non-Veg Lunch (Token Required)</li>
+                <li>Eligible for Bulk Registration Special Offers</li>
+                <li><strong>Best Value Option – Zero Accommodation Charges!</strong></li>
+              </ul>
+            </div>
+
+            <div className="acc-card">
+              <h3>Single Registration</h3>
+              <p><strong>Workshop Only:</strong></p>
+              <ul>
+                <li>2nd Day Non-Veg Lunch Provided</li>
+                <li>Accommodation <span className="pri">₹50</span> per day</li>
+              </ul>
+
+              <p><strong>Events Only:</strong></p>
+              <ul>
+                <li>Accommodation + Food <span className="pri">₹100</span> per day (Optional)</li>
+              </ul>
+            </div>
+
+            <div className="acc-card">
+              <h3>Bulk Registration Benefits</h3>
+              <ul>
+                <li>Special Discounted Offers Available</li>
+                <li>Charges Negotiable for Bulk Participants</li>
+              </ul>
+            </div>
+            <div className="acc-buttons">
+              <button
+                className="acc-btn query-btn"
+                onClick={() => {
+                  navigate("/");
+                  setTimeout(() => {
+                    document.getElementById("contact")?.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                  }, 200);
+                }}
+              >
+              For Queries ?
+              </button>
+              <button
+                className="acc-btn accommodate-btn"
+                onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLScMhJpIP4LRv1HoT9IcIW7AYtNhfhBXgxso2TKchNlVrwUXTg/viewform?usp=publish-editor", "_blank")}
+              >
+                Accommodate
+              </button>
+            </div>
+          </div>
+
           {/* Modal */}
           {showModal && (
             <div className="modal-overlay">
