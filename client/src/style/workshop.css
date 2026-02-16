@@ -491,6 +491,9 @@
     0 8px 20px rgba(255, 106, 0, 0.6),
     0 0 35px rgba(255, 106, 0, 0.4);
 }
+#accommodation {
+  scroll-margin-top: 100px;
+}
 
 .acc-card .pri{
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));

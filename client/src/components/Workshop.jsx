@@ -120,7 +120,7 @@ export default function Workshop() {
             <button className="register-now-btn" onClick={handleRegisterClick}>Register Now</button>
           </div>
           {/* Accommodation Section */}
-          <div className="accommodation-section">
+          <div id = "accommodation" className="accommodation-section">
             <h2 className="section-title">Accommodation Details – MEKCHAT Symposium</h2>
 
             <div className="acc-card">

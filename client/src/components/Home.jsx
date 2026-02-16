@@ -3,9 +3,9 @@ import ScrollReveal from "scrollreveal";
 import { Link } from "react-router-dom";
 import Countdown from "./CountDown";
 import '../style/home.css';
-
+import { useNavigate } from "react-router-dom";
 export default function Hero() {
-
+  const navigate = useNavigate();
   useEffect(() => {
     const sr = ScrollReveal({
       origin: "right",
@@ -18,9 +18,9 @@ export default function Hero() {
 
     sr.reveal(".hero-subtitle", { delay: 200 });
     sr.reveal(".hero-title", {
-  origin: "left",
-  distance: "80px"
-});
+      origin: "left",
+      distance: "80px"
+    });
 
     // sr.reveal(".hero-title", { delay: 400 });
     sr.reveal(".hero-text", { delay: 600 });
@@ -65,8 +65,20 @@ export default function Hero() {
           <Link to="/workshop" className="btn btn-outline">
             WORKSHOP
           </Link>
+          <button
+            className="btn btn-outline"
+            onClick={() => {
+              navigate("/workshop");
+              setTimeout(() => {
+                document
+                  .getElementById("accommodation")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }, 200);
+            }}
+          >
+            ACCOMMODATION
+          </button>
         </div>
-
         <div className="countdown-wrapper">
           <Countdown />
         </div>
